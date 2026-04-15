@@ -1,0 +1,7 @@
+{
+  "name": "ClassicDrive - Vintage Cars Marketplace",
+  "description": "A premium full-stack marketplace for classic and vintage automobiles featuring a simulated Indian payment gateway, admin management, and a Gemini-powered car history expert.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
