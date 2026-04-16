@@ -20,7 +20,10 @@ export const api = {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(carData)
         });
-        if (!response.ok) throw new Error('Failed to register car');
+        if (!response.ok) {
+            const err = await response.json();
+            throw new Error(err.message || 'Failed to register car');
+        }
         return response.json();
     },
 
@@ -30,7 +33,10 @@ export const api = {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(carData)
         });
-        if (!response.ok) throw new Error('Failed to update car');
+        if (!response.ok) {
+            const err = await response.json();
+            throw new Error(err.message || 'Failed to update car');
+        }
         return response.json();
     },
 

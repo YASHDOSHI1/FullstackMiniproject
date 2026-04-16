@@ -20,6 +20,15 @@ const carSchema = new mongoose.Schema({
   year: { type: Number, required: true },
   sections: [carSectionSchema],
   available: { type: Boolean, default: true }
-}, { timestamps: true });
+}, { 
+  timestamps: true,
+  toJSON: {
+    transform: (doc, ret) => {
+      ret.id = ret._id.toString();
+      delete ret._id;
+      delete ret.__v;
+    }
+  }
+});
 
 module.exports = mongoose.model('Car', carSchema);
