@@ -16,7 +16,7 @@ const Checkout: React.FC<CheckoutProps> = ({ cart, user, onOrderSuccess, onClear
   const [done, setDone] = useState(false);
 
   const subtotal = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
-  const total = subtotal + 1500000; // Appraisal fee
+  const total = subtotal + 15000; // Appraisal fee in Rupees
 
   const handlePay = (e: React.FormEvent) => {
     e.preventDefault();
@@ -118,7 +118,7 @@ const Checkout: React.FC<CheckoutProps> = ({ cart, user, onOrderSuccess, onClear
                 disabled={loading}
                 className="w-full bg-slate-950 text-white py-6 rounded-[30px] font-black text-sm uppercase tracking-[0.3em] hover:bg-blue-600 transition-all disabled:bg-slate-300 shadow-2xl shadow-slate-950/20 italic"
               >
-                {loading ? 'AUTHENTICATING TRANSACTION...' : `AUTHORIZE ₹${(total/100).toLocaleString('en-IN')}`}
+                {loading ? 'AUTHENTICATING TRANSACTION...' : `AUTHORIZE ₹${total.toLocaleString('en-IN')}`}
               </button>
             </form>
           </div>
@@ -137,22 +137,22 @@ const Checkout: React.FC<CheckoutProps> = ({ cart, user, onOrderSuccess, onClear
                           <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">QTY: {item.quantity}</p>
                        </div>
                     </div>
-                    <span className="text-sm font-black text-blue-500">₹{(item.price * item.quantity / 100).toLocaleString('en-IN')}</span>
+                    <span className="text-sm font-black text-blue-500">₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
                   </div>
                 ))}
               </div>
               <div className="space-y-4 pt-6 border-t border-slate-800">
                 <div className="flex justify-between text-xs font-bold text-slate-500 uppercase tracking-widest">
                   <span>Valuation</span>
-                  <span className="text-white">₹{(subtotal/100).toLocaleString('en-IN')}</span>
+                  <span className="text-white">₹{subtotal.toLocaleString('en-IN')}</span>
                 </div>
                 <div className="flex justify-between text-xs font-bold text-slate-500 uppercase tracking-widest">
                   <span>Appraisal Fee</span>
-                  <span className="text-white">₹{(1500000/100).toLocaleString('en-IN')}</span>
+                  <span className="text-white">₹{(15000).toLocaleString('en-IN')}</span>
                 </div>
                 <div className="flex justify-between font-black text-2xl pt-6 text-white border-t border-slate-800/50">
                   <span className="italic uppercase tracking-tighter">Total</span>
-                  <span className="text-blue-500">₹{(total/100).toLocaleString('en-IN')}</span>
+                  <span className="text-blue-500">₹{total.toLocaleString('en-IN')}</span>
                 </div>
               </div>
             </div>

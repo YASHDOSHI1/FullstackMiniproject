@@ -12,7 +12,7 @@ const INITIAL_CARS = [
     fuelFeed: '3 SU Carburettors',
     weight: '1,502kg (3,311 lb)',
     topSpeed: '145 mph (233km/h)',
-    price: 63550000,
+    price: 635500,
     year: 1965,
     images: ['/image1.png'],
     sections: [
@@ -30,7 +30,7 @@ const INITIAL_CARS = [
     fuelFeed: 'Four-barrel Carburettor',
     weight: '1,250kg (2,755 lb)',
     topSpeed: '120 mph (193km/h)',
-    price: 900000000,
+    price: 9000000,
     year: 1967,
     images: ['https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&q=80&w=800'],
     sections: [

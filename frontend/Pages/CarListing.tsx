@@ -49,7 +49,7 @@ const CarListing: React.FC<CarListingProps> = ({ cars, onAddToCart }) => {
                   <p className="text-xs font-bold text-slate-400 tracking-widest">{car.brand.toUpperCase()} • {car.year}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xl font-black text-blue-600">₹{(car.price / 100).toLocaleString('en-IN')}</p>
+                  <p className="text-xl font-black text-blue-600">₹{car.price.toLocaleString('en-IN')}</p>
                 </div>
               </div>
               <div className="mt-auto pt-8 flex gap-3">

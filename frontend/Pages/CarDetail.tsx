@@ -85,7 +85,7 @@ const CarDetail: React.FC<CarDetailProps> = ({ cars, onAddToCart }) => {
               <span className="text-blue-600 font-black uppercase tracking-[0.4em] text-xs mb-3 block">Global Automotive Registry</span>
               <h1 className="text-6xl font-black text-slate-950 leading-none tracking-tighter uppercase italic mb-6">{car.name}</h1>
               <div className="flex items-center gap-4">
-                <p className="text-4xl font-black text-slate-900">₹{(car.price / 100).toLocaleString('en-IN')}</p>
+                <p className="text-4xl font-black text-slate-900">₹{car.price.toLocaleString('en-IN')}</p>
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full border border-slate-200">Price on Request</span>
               </div>
             </div>

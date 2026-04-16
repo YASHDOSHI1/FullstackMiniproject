@@ -147,7 +147,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ cars, orders, setCars, 
                   <div className="flex items-center gap-4 w-full md:w-auto justify-center">
                     <div className="text-right">
                       <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Value</p>
-                      <p className="font-black text-slate-950">₹{(car.price / 100).toLocaleString('en-IN')}</p>
+                      <p className="font-black text-slate-950">₹{car.price.toLocaleString('en-IN')}</p>
                     </div>
                     <div className="flex gap-2 ml-4">
                       <button onClick={() => handleEdit(car)} className="w-10 h-10 bg-slate-50 text-slate-400 rounded-full flex items-center justify-center hover:bg-blue-50 hover:text-blue-600 transition">
@@ -224,8 +224,8 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ cars, orders, setCars, 
                   <input required type="number" className="w-full border-none p-5 rounded-3xl bg-slate-50 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all font-bold" value={newCar.year} onChange={e => setNewCar({...newCar, year: parseInt(e.target.value)})} />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3 ml-2">Price (Paise)</label>
-                  <input required type="number" placeholder="Value in paise" className="w-full border-none p-5 rounded-3xl bg-slate-50 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all font-bold" value={newCar.price} onChange={e => setNewCar({...newCar, price: parseInt(e.target.value)})} />
+                  <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3 ml-2">Price (INR)</label>
+                  <input required type="number" placeholder="Value in Rupees" className="w-full border-none p-5 rounded-3xl bg-slate-50 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all font-bold" value={newCar.price} onChange={e => setNewCar({...newCar, price: parseInt(e.target.value)})} />
                 </div>
 
                 <div className="md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-50 p-6 rounded-[40px]">

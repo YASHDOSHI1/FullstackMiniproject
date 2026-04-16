@@ -10,7 +10,7 @@ interface CartProps {
 
 const Cart: React.FC<CartProps> = ({ items, onUpdateQty, onRemove }) => {
   const subtotal = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const appraisalFee = 1500000; // Simplified consistent value
+  const appraisalFee = 15000; // 15k Rupees
 
   if (items.length === 0) {
     return (
@@ -78,7 +78,7 @@ const Cart: React.FC<CartProps> = ({ items, onUpdateQty, onRemove }) => {
                     </div>
                     <div className="text-right">
                        <p className="text-[9px] uppercase tracking-[0.2em] font-black text-slate-400 mb-1">Asset Value</p>
-                       <p className="text-2xl font-black text-slate-950 leading-none tracking-tighter">₹{(item.price * item.quantity / 100).toLocaleString('en-IN')}</p>
+                       <p className="text-2xl font-black text-slate-950 leading-none tracking-tighter">₹{(item.price * item.quantity).toLocaleString('en-IN')}</p>
                     </div>
                   </div>
                 </div>
@@ -91,11 +91,11 @@ const Cart: React.FC<CartProps> = ({ items, onUpdateQty, onRemove }) => {
             <div className="space-y-6 mb-12">
               <div className="flex justify-between items-center text-sm font-medium text-slate-400">
                 <span className="uppercase tracking-widest text-[10px]">Asset Subtotal</span>
-                <span className="text-white font-bold">₹{(subtotal / 100).toLocaleString('en-IN')}</span>
+                <span className="text-white font-bold">₹{subtotal.toLocaleString('en-IN')}</span>
               </div>
               <div className="flex justify-between items-center text-sm font-medium text-slate-400">
                 <span className="uppercase tracking-widest text-[10px]">Appraisal Fee</span>
-                <span className="text-white font-bold">₹{(appraisalFee / 100).toLocaleString('en-IN')}</span>
+                <span className="text-white font-bold">₹{appraisalFee.toLocaleString('en-IN')}</span>
               </div>
               <div className="flex justify-between items-center text-sm font-medium text-slate-400">
                 <span className="uppercase tracking-widest text-[10px]">Secure Logistics</span>
@@ -103,7 +103,7 @@ const Cart: React.FC<CartProps> = ({ items, onUpdateQty, onRemove }) => {
               </div>
               <div className="pt-8 border-t border-slate-800 flex justify-between items-end">
                 <span className="text-[10px] uppercase tracking-[0.3em] font-black text-slate-500 leading-none mb-1">Acquisition Total</span>
-                <span className="text-3xl font-black text-white leading-none tracking-tighter italic">₹{((subtotal + appraisalFee) / 100).toLocaleString('en-IN')}</span>
+                <span className="text-3xl font-black text-white leading-none tracking-tighter italic">₹{(subtotal + appraisalFee).toLocaleString('en-IN')}</span>
               </div>
             </div>
             
